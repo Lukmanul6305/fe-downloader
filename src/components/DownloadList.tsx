@@ -16,7 +16,8 @@ export default function DownloadList({ options }: Props) {
           key={idx}
           href={opt.url}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer" 
+          title="Klik kanan > Save Link As jika video diputar"
           className="flex justify-between items-center w-full py-2 px-4 bg-red-50 text-red-700 border border-red-100 rounded hover:bg-red-100 transition-colors text-sm font-medium decoration-none"
         >
           <span>{opt.quality}</span>
@@ -25,6 +26,11 @@ export default function DownloadList({ options }: Props) {
           </span>
         </a>
       ))}
+      
+      {/* Tambahan Teks Bantuan UI */}
+      <p className="text-[10px] text-gray-400 text-center mt-2 italic">
+        *Jika video otomatis berputar, klik ikon titik tiga (⋮) di player lalu pilih Download.
+      </p>
     </div>
   );
 }
